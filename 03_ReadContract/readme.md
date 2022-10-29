@@ -108,7 +108,7 @@ const main = async () => {
     // 2. 读取DAI合约的链上信息（IERC20接口合约）
     const nameDAI = await contractDAI.name()
     const symbolDAI = await contractDAI.symbol()
-    const totalSupplDAI = await contractDAI.totalSupply()
+    const totalSupplyDAI = await contractDAI.totalSupply()
     console.log("\n2. 读取DAI合约信息")
     console.log(`合约地址: ${addressDAI}`)
     console.log(`名称: ${nameDAI}`)
@@ -132,7 +132,6 @@ main()
 ## 总结
 
 这一讲，我们介绍了`ethers`中的`Contract`合约类，并创建了`WETH`和`DAI`的只读`Contract`实例，成功读取了V神这两个币的持仓。
-
 
 
 
