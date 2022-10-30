@@ -41,8 +41,8 @@
     - `from`：执行时的`msg.sender`，也就是你可以模拟任何一个人的调用，比如V神。
     - `value`：执行时的`msg.value`。
     - `blockTag`：执行时的区块高度。
-    - `gasPrice`
-    - `gasLimit`
+    - `gasPrice`：你可能会疑问，既然`callStatic`方法不需要消耗gas，为什么还要有这个参数呢？答案是虽然交易不上链，但EVM仍需要向`tx.gasprice`返回一个值。绝大多数的开发者不需要这个参数。
+    - `gasLimit`：同上，EVM仍需要向`gasleft`返回一个值，所以有此参数。
     - `nonce`
 
 ## 用`callStatic`模拟`DAI`转账
