@@ -31,13 +31,13 @@
 在`ethers.js`中你可以利用`contract`对象的`callStatic()`来调用以太坊节点的`eth_call`。如果调用成功，则返回`ture`；如果失败，则报错并返回失败原因。方法：
 
 ```js
-    const tx = await contract.callStatic.函数名( 参数, {override})
+    const tx = await contract.callStatic.函数名(参数, {override})
     console.log(`交易会成功吗？：`, tx)
 ```
 
 - 函数名：为模拟调用的函数名。
 - 参数：调用函数的参数。
-- {override}：选填，可包含一下参数：
+- {override}：选填，可包含以下参数：
     - `from`：执行时的`msg.sender`，也就是你可以模拟任何一个人的调用，比如V神。
     - `value`：执行时的`msg.value`。
     - `blockTag`：执行时的区块高度。
@@ -50,11 +50,11 @@
 1. 创建`provider`和`wallet`对象。
     ```js
     import { ethers } from "ethers";
-
+    
     //准备 alchemy API 可以参考https://github.com/AmazingAng/WTFSolidity/blob/main/Topics/Tools/TOOL04_Alchemy/readme.md 
     const ALCHEMY_MAINNET_URL = 'https://eth-mainnet.g.alchemy.com/v2/oKmOQKbneVkxgHZfibs-iFhIlIAl6HDN';
     const provider = new ethers.providers.JsonRpcProvider(ALCHEMY_MAINNET_URL);
-
+    
     // 利用私钥和provider创建wallet对象
     const privateKey = '0x227dbb8586117d55284e26620bc76534dfbd2394be34cf4a09cb775d593b6f2b'
     const wallet = new ethers.Wallet(privateKey, provider)
