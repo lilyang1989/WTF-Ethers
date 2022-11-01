@@ -86,7 +86,7 @@ const transferEvents = await contract.queryFilter('事件名', 起始区块, 结
 
 5. 读取事件的解析结果。
 
-    ```
+    ```js
     // 解析Transfer事件的数据（变量在args中）
     console.log("\n2. 解析事件：")
     const amount = ethers.utils.formatUnits(ethers.BigNumber.from(transferEvents[0].args["amount"]), "ether");
